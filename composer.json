@@ -3,7 +3,7 @@
     "description": "A php implementation of the Elixir pipe operator",
     "type": "library",
     "require-dev": {
-        "phpspec/phpspec": "^2.2"
+        "phpunit/phpunit": "^4.7"
     },
     "license": "MIT",
     "authors": [
@@ -13,7 +13,11 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "phpcollection/phpcollection": "^0.4.0",
+        "lstrojny/functional-php": "^1.0",
+        "cypresslab/php-curry": "0.1.0"
+    },
     "config": {
         "bin-dir": "bin"
     },
