@@ -30,11 +30,10 @@ class Pipeline
 
     /**
      * @param callable $func a php callable
-     * @param mixed    $args you can pass as many args as you want, they will be partially right applied to the function
      */
-    public function addSegment(callable $func, ...$args)
+    public function addSegment(callable $func)
     {
-        $this->segments->add(new Segment($func, $args));
+        $this->segments->add(new Segment($func, $this->rest(func_get_args())));
     }
 
     /**
@@ -46,5 +45,14 @@ class Pipeline
         return F\reduce_left($this->segments, function (Segment $segment, $i, $c, $subject) {
             return $segment->handle($subject);
         }, $subject);
+    }
+
+    /**
+     * @param array $args
+     * @return array
+     */
+    private function rest(array $args)
+    {
+        return array_slice($args, 1);
     }
 }

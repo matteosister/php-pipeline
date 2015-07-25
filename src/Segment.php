@@ -26,9 +26,6 @@ class Segment
      */
     public function handle($subject)
     {
-        if (is_array($subject)) {
-            return call_user_func($this->func, ...$subject);
-        }
-        return call_user_func($this->func, $subject);
+        return call_user_func_array($this->func, is_array($subject) ? $subject : [$subject]);
     }
 }
