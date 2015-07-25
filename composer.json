@@ -1,0 +1,25 @@
+{
+    "name": "cypresslab/php-pipeline",
+    "description": "A php implementation of the Elixir pipe operator",
+    "type": "library",
+    "require-dev": {
+        "phpspec/phpspec": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matteo Giachino",
+            "email": "matteog@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cypress\\Pipeline\\": "src/"
+        }
+    }
+}
