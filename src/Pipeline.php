@@ -33,7 +33,12 @@ class Pipeline
      */
     public function addSegment(callable $func)
     {
-        $this->segments->add(new Segment($func, $this->rest(func_get_args())));
+        $args = array_slice(func_get_args(), 1);
+        if (empty($args)) {
+            $this->segments->add(new Segment($func));
+            return;
+        }
+        $this->segments->add(new Segment($func, $args[0]));
     }
 
     /**
@@ -45,14 +50,5 @@ class Pipeline
         return F\reduce_left($this->segments, function (Segment $segment, $i, $c, $subject) {
             return $segment->handle($subject);
         }, $subject);
-    }
-
-    /**
-     * @param array $args
-     * @return array
-     */
-    private function rest(array $args)
-    {
-        return array_slice($args, 1);
     }
 }

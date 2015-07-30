@@ -16,7 +16,7 @@
     "require": {
         "phpcollection/phpcollection": "^0.4.0",
         "lstrojny/functional-php": "^1.0",
-        "cypresslab/php-curry": "0.1.0"
+        "cypresslab/php-curry": "~0.2"
     },
     "config": {
         "bin-dir": "bin"

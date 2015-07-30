@@ -15,9 +15,10 @@ class Segment
      * @param callable $func
      * @param ...$args
      */
-    public function __construct(callable $func, $args)
+    public function __construct(callable $func)
     {
-        $this->func = empty($args) ? $func : C\curry_right($func, ...$args);
+        $args = array_slice(func_get_args(), 1);
+        $this->func = empty($args) ? $func : C\curry_right_args($func, $args);
     }
 
     /**
@@ -26,6 +27,6 @@ class Segment
      */
     public function handle($subject)
     {
-        return call_user_func_array($this->func, is_array($subject) ? $subject : [$subject]);
+        return call_user_func_array($this->func, is_array($subject) ? $subject : array($subject));
     }
 }
