@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28c32521e60d719f60d4933d3f52578f",
+    "hash": "482f604fac2300bac3ade7f2a267b421",
     "packages": [
         {
             "name": "cypresslab/php-curry",
@@ -1162,6 +1162,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3.3"
+    },
     "platform-dev": []
 }
