@@ -8,24 +8,16 @@ use Functional as F;
 class Pipeline
 {
     /**
-     * @var string
-     */
-    private $name;
-
-    /**
      * @var Sequence
      */
     private $segments;
 
     /**
      * Pipeline builder
-     *
-     * @param string $name
      */
-    public function __construct($name)
+    public function __construct()
     {
         $this->segments = new Sequence();
-        $this->name = $name;
     }
 
     /**

@@ -11,7 +11,7 @@ class PipelineTest extends \PHPUnit_Framework_TestCase
 
     function setup()
     {
-        $this->pipeline = new Pipeline('test');
+        $this->pipeline = new Pipeline();
     }
 
     function test_empty_pipeline()
